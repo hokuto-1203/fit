@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   # フォームから送信されたメールアドレスを取得し、一致するユーザーがいるか検索しています。
   # if user && user.authenticate(params[:session][:password])
   # 「該当のメールアドレスをもつUserが存在している。かつUserのパスワードが正しい。」場合のみtrueになる条件式
+  # successがkeyで、ログインに成功しましたがvalueになる。↓application.html.erb
   def create
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
