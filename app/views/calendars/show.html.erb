@@ -1,0 +1,20 @@
+<h1>投稿詳細</h1>
+<table>
+   <tr>
+     <th>日付</th>
+     <th>tops</th>
+     <th>bottoms</th>
+     <th>shoes</th>
+     <th>メモ</th>
+   </tr>
+   <tr>
+     <td><%= @calendar.c_date %></td>
+     <td><%= @calendar.image1 %></td>
+     <td><%= @calendar.image2 %></td>
+     <td><%= @calendar.image3 %></td>
+     <td><%= @calendar.description %></td>
+     <%= link_to "編集", edit_calendar_path(calendar.id), method: :get %>
+     <%= link_to "削除", calendar_path(calendar.id), method: :delete, data: {confirm: "本当に削除しますか"} %>
+   </tr>
+   <% end %>
+</table>

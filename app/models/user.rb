@@ -3,4 +3,7 @@ class User < ApplicationRecord
     validates :email, presence: true
 
     has_secure_password
+
+    has_many :items
+    has_many :calendars
 end

@@ -18,14 +18,14 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
         <%= link_to root_path do %>
-          <span><%= image_tag "background/one.jpeg", class: "navbar-brand" %></span>
+          <span><%= image_tag "navbar/logo1.png", class: "navbar-brand" %></span>
 
         <% end %>
         <ul class="nav navbar-nav navbar-right">
          <% if logged_in? %>
            <li>
-             <%= link_to '#' do %>
-               <%= image_tag "icons/heart.png" %>
+             <%= link_to calendars_index_path do %>
+               <%= image_tag "icons/calendar1.jpeg" %>
              <% end %>
            </li>
            <li>
@@ -44,14 +44,18 @@
                <%= image_tag "icons/register.png" %>
              <% end %>
            </li>
+           <li>
+            <%= link_to login_path do %>
+              <%= image_tag "icons/login.png" %>
+            <% end %>
+           </li>
          <% end %>
         </ul>
       </div>
     </nav>
-
-
+  <div class="cotainer">
     <%= yield %>
-
+  </div>
    <script>
     $(function(){
       $(".alert").fadeOut(5000);
