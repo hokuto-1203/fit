@@ -10,10 +10,6 @@ class CalendarsController < ApplicationController
     @shoes_items = Item.where(user_id: current_user.id).where(choice: 3).order(:c_date)
   end
 
-  def calendar_items
-    params.require(:calendar).permit(:top_item, :bottom_item, :shoes_item, :description, :c_date  { category_ids: [] })
-  end
-
   def new
     @calendar = Calendar.new
     @calendar.c_date = params[:c_date]
@@ -111,6 +107,10 @@ class CalendarsController < ApplicationController
 
     def find_calendar_by_id
         Calendar.find(params[:id])
+    end
+
+    def calendar_items_params
+      params.require(:calendar).permit(:top_item, :bottom_item, :shoes_item, :description, :c_date  { category_ids: [] })
     end
 end
 #　@calendar = item.newにする必要ありなのかも
